@@ -29,13 +29,25 @@ public class Arrayz {
         boolean magic_lines = false;
         int square_side = square.length;
         int line_sum = 0;
+        int count = 0;
 
         for (int i = 0; i < square_side; i++) {
-            for (int j = 0; j < square_side-1; j++) {
+            for (int j = 0; j < square_side - 1; j++) {
                 // line_sum = line_sum + square[i][j];
-                if (square[i][j] == square[i][j+1])
+                if (square[i][j] == square[i][j + 1]) {
+                    count += 1;
+                }
+                if (square[i][j] == square[i+1][j]) {
+                    count +=1;
+                }
+                if (square[i][j] == square[i+1][j+1]) {
+                    count += 1
+                }
 
-            }
+            };
+        if (count == 16) {
+            return true;
+        }
             System.out.println(line_sum);
 
         }
